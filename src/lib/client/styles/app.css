@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer base {
+  html {
+    @apply text-base;
+  }
+
+  body {
+    @apply relative h-full w-full;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  *:disabled {
+    cursor: not-allowed;
+  }
+}
