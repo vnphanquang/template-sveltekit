@@ -31,5 +31,4 @@ api/
 **/*generated/
 *.css
 ~partytown/
-
-docs/PROJECT_REFERENCES.md
+*.ejs.t
