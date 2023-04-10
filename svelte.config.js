@@ -11,14 +11,18 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const config = {
   preprocess: [
     vitePreprocess(),
-    inlineSvg({
-      directories: [path.resolve(__dirname, 'src/lib/shared/assets/images/svg')],
-      inlineSrcAttributeName: 'inline-src',
-      attributes: {
-        height: 24,
-        width: 24,
+    inlineSvg(
+      {
+        directories: [path.resolve(__dirname, 'src/lib/shared/assets/images/svg')],
+        attributes: {
+          height: 24,
+          width: 24,
+        },
       },
-    }),
+      {
+        inlineSrcAttributeName: 'inline-src',
+      },
+    ),
   ],
   kit: {
     adapter: adapter({
