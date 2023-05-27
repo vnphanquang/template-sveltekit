@@ -21,7 +21,21 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: ['tailwind', 'apply', 'layer', 'config', 'screen', 'mixin', 'define-mixin'],
+        ignoreAtRules: [
+          'tailwind',
+          'apply',
+          'layer',
+          'config',
+          'screen',
+          'mixin',
+          'define-mixin',
+          'space-x',
+          'space-y',
+          'gspace-x',
+          'gspace-y',
+          'dark',
+          'light',
+        ],
       },
     ],
     'value-keyword-case': [
@@ -33,6 +47,7 @@ module.exports = {
     'declaration-block-no-redundant-longhand-properties': null,
     'selector-class-pattern': null,
     'no-descending-specificity': null,
+    'custom-property-empty-line-before': null,
   },
   ignoreFiles: ['**/app.html', '**/*.template.html'],
 };
