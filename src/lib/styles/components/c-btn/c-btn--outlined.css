@@ -1,0 +1,27 @@
+/*
+	An outlined button, often used along side a default `c-btn` and
+	acts as secondary action
+
+	```html
+	<button class="c-btn c-btn--outlined">
+		<i class="i i-[ph--info] h-6 w-6"></i>
+		<span>Click me</span>
+	</button>
+	```
+*/
+@utility c-btn--outlined {
+	@layer components {
+		border-color: var(--color-on-surface);
+		background-color: var(--color-surface);
+
+		&:not(:is(:disabled, [disabled]:not([disabled='false'])), :has(input:disabled)) {
+			@variant hover {
+				background-color: oklch(from var(--color-surface) calc(l - 0.05) c h);
+			}
+
+			@variant active {
+				background-color: oklch(from var(--color-surface) calc(l - 0.025) c h);
+			}
+		}
+	}
+}

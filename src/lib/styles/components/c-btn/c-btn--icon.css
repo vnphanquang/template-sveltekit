@@ -1,0 +1,34 @@
+/*
+	An icon button
+
+	```html
+	<button class="c-btn c-btn--icon">
+		<i class="i i-[ph--info] h-6 w-6"></i>
+	</button>
+	```
+*/
+@utility c-btn--icon {
+	@layer components {
+		--color-active: var(--color-primary);
+
+		display: flex;
+		padding: var(--spacing) calc(var(--spacing) * 2);
+		border: none;
+		background-color: none;
+
+		/** for timeout and delayed */
+		&::after {
+			background-color: var(--color-on-surface) !important;
+		}
+
+		&:not(:is(:disabled, [disabled]:not([disabled='false'])), :has(input:disabled)) {
+			@variant hover {
+				color: var(--color-active);
+			}
+
+			@variant active {
+				color: oklch(from var(--color-active) calc(l - 0.05) c h);
+			}
+		}
+	}
+}

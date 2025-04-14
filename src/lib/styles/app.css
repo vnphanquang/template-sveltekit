@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+@import './variants.css';
+@import './components/index.css';
+@import './icons/index.css';
+@import './utilities/index.css';
+
+@theme {
+	/** font family */
+	--font-inter: 'Inter', 'sans-serif';
+
+	/** font size */
+	--text-2xs: 0.625rem; /* 10px */
+	--text-xs: 0.75rem; /* 12px */
+
+	/** colors */
+	--color-surface: oklch(98.83% 0.01 75deg);
+	--color-surface-subtle: oklch(91.8% 0.012 75deg);
+	--color-on-surface: oklch(19.34% 0.012 75deg);
+	--color-outline: oklch(78.91% 0.012 75deg);
+	--color-outline-focus: oklch(61.97% 0.113 220.2deg);
+	--color-primary: oklch(70.28% 0.195 40.05deg);
+	--color-link: oklch(53.09% 0.167 40deg);
+
+	/* z-index */
+	--z-index-px: 1;
+	--z-index-header: 50;
+	--z-index-dialog: 80;
+	--z-index-popup: 120;
+	--z-index-overlay: 150;
+	--z-index-notification: 300;
+
+	/** border width */
+	--border-width-onehalf: 1.5px;
+
+	/* border radius */
+	--radius-inherit: inherit;
+	--radius-full: calc(infinity * 1px);
+
+	/* miscellaneous */
+	--leading-unset: unset;
+
+	/* static spacing */
+	--spacing-readable-tight: 60ch;
+	--spacing-readable: 72ch;
+	--spacing-readable-relaxed: 86ch;
+}
+
+@layer base {
+	html {
+		border-color: var(--color-outline);
+		font-family: var(--font-inter);
+		color: var(--color-on-surface);
+		background-color: var(--color-surface);
+	}
+
+	* {
+		border-color: inherit;
+	}
+
+	body {
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+
+		min-height: 100vh;
+		min-height: 100dvh;
+	}
+
+	button,
+	input {
+		padding-block: 0;
+		padding-inline: 0;
+		border-color: transparent;
+		border-radius: 0;
+
+		color: inherit;
+
+		background-color: transparent;
+	}
+
+	button:focus-visible:not(:disabled),
+	label:has(input:focus-visible):not(:disabled) {
+		outline: 1.5px solid var(--color-outline-focus);
+		outline-offset: 1px;
+	}
+}
