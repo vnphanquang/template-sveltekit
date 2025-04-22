@@ -4,16 +4,20 @@
 	<section class="max-w-pad bg-surface-subtle space-y-6 py-10">
 		<h2 class="text-2xl font-medium">Note about Svelte inspector</h2>
 		<p class="max-w-readable">
-			There is a <i class="i i-[simple-icons--svelte] h-5 w-5"></i> icon button at the left bottom
-			corner of the page. That's the
+			If the site is started on local development environment, i.e <code>pnpm dev</code>, there
+			should be a
+			<i class="i i-[simple-icons--svelte] h-5 w-5">
+				<span class="sr-only"></span>
+			</i>
+			icon button at the left bottom corner of the page. That's the
 			<a
 				class="c-link"
 				href="https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/inspector.md"
 				>Svelte inspector</a
 			>
-			feature that is enabled via <code>svelte.config.js</code>. Try activating it, then hover and
-			click on any element on this page, it should open the corresponding source code location in
-			your editor.
+			feature that is enabled via <code>svelte.config.js</code>. Activate by clicking on it, then
+			hover and click on any element on this page, which should open the corresponding source code
+			location in your editor.
 		</p>
 	</section>
 
